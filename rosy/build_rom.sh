@@ -16,6 +16,7 @@ export NFS_ADD_GCAMGO=true
 lunch awaken_rosy-user
 lunch awaken_rosy-userdebug
 curl -s -X POST "https://api.telegram.org/bot${tg_token}/sendMessage" -d chat_id="${tg_id}" -d "disable_web_page_preview=true" -d "parse_mode=html" -d text="===================================%0A<b>Redmi 5 ($device)</b> Building Rom Started%0A<b>ROM:</b>$rom_name%0A<b>Build Type:</b>$NFS_BUILD_VARIANT%0A$(echo "${var_cache_report_config}")"
+rm -rf device/xiaomi/rosy/qcom-caf/display/display-commonsys-intf
 make bacon
 # end
 
